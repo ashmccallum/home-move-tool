@@ -1,9 +1,22 @@
 <h1>
   {{title}}
+</h1>
+<!--<div>
+  <md-list>
+    <md-list-item class="text" *ngFor="let item of items | async">
+      {{item.$value}}
+    </md-list-item>
+  </md-list>
+</div>-->
+<div>
   <md-checkbox></md-checkbox>
+</div>
+<div>
   <button md-raised-button color="primary">Click Me</button>
+</div>
+<div>
   <md-input placeholder="amount" align="end">
     <span md-prefix>$&nbsp;</span>
     <span md-suffix>.00</span>
   </md-input>
-</h1>
+</div>

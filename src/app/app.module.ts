@@ -8,8 +8,18 @@ import { MdButtonModule } from '@angular2-material/button';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 import { MdIconModule } from '@angular2-material/icon';
 import { MdInputModule } from '@angular2-material/input';
+import { MdListModule } from '@angular2-material/list';
 
 import { AppComponent } from './app.component';
+
+import { AngularFireModule } from 'angularfire2';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBzQ2EqcAa8qX0hHc1Zn1fsB8fwHCZaxOY",
+  authDomain: "home-move-tool.firebaseapp.com",
+  databaseURL: "https://home-move-tool.firebaseio.com",
+  storageBucket: "home-move-tool.appspot.com"
+}
 
 @NgModule({
   declarations: [
@@ -23,7 +33,9 @@ import { AppComponent } from './app.component';
     MdSidenavModule,
     MdCheckboxModule,
     MdIconModule,
-    MdInputModule
+    MdInputModule,
+    MdListModule,
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   providers: [],
   entryComponents: [AppComponent],
