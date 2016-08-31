@@ -12,13 +12,18 @@ import { MdListModule } from '@angular2-material/list';
 
 import { AppComponent } from './app.component';
 
-import { AngularFireModule } from 'angularfire2';
+import { AngularFireModule, AuthMethods, AuthProviders, firebaseAuthConfig } from 'angularfire2';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBzQ2EqcAa8qX0hHc1Zn1fsB8fwHCZaxOY",
   authDomain: "home-move-tool.firebaseapp.com",
   databaseURL: "https://home-move-tool.firebaseio.com",
   storageBucket: "home-move-tool.appspot.com"
+}
+
+export const FirebaseAuthConfig = {
+  provider: AuthProviders.Facebook,
+  method: AuthMethods.Redirect
 }
 
 @NgModule({
@@ -35,7 +40,7 @@ export const firebaseConfig = {
     MdIconModule,
     MdInputModule,
     MdListModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig, FirebaseAuthConfig)
   ],
   providers: [],
   entryComponents: [AppComponent],

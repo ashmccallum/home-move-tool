@@ -9,9 +9,12 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
   directives: []
 })
 export class AppComponent {
-  //items: FirebaseListObservable<any[]>;
-  constructor(af: AngularFire) {
-    //this.items = af.database.list('items');
+  items: FirebaseListObservable<any[]>;
+  constructor(public af: AngularFire) {
+    this.items = af.database.list('items');
   }
-  title = 'Someone told me: app works!';
+  login() {
+    this.af.auth.login();
+  }
+  title = 'Home Move Tool';
 }

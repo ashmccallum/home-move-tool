@@ -1,13 +1,16 @@
 <h1>
   {{title}}
 </h1>
-<!--<div>
+<div> {{ (af.auth | async)?.uid }} </div>
+<button md-raised-button color="primary" (click)="login()">Login</button>
+<div>
   <md-list>
     <md-list-item class="text" *ngFor="let item of items | async">
-      {{item.$value}}
+      <h1 md-line> {{item.$key}} </h1>
+      <p md-line> {{item.$value}} </p>
     </md-list-item>
   </md-list>
-</div>-->
+</div>
 <div>
   <md-checkbox></md-checkbox>
 </div>
