@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule, AuthMethods, AuthProviders, firebaseAuthConfig } from 'angularfire2';
 import { LoginComponent } from './login/login.component';
+import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyBzQ2EqcAa8qX0hHc1Zn1fsB8fwHCZaxOY",
@@ -30,7 +31,8 @@ export const FirebaseAuthConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    BuyerDetailsComponent
   ],
   imports: [
     BrowserModule,

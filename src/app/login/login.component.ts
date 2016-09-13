@@ -16,4 +16,8 @@ export class LoginComponent {
   login() {
     this.af.auth.login();
   }
+
+  logout() {
+    this.af.auth.logout();
+  }
 }
