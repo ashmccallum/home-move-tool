@@ -13,11 +13,4 @@ export class LoginComponent {
     this.af.auth.subscribe(auth => console.log(auth));
   }
   
-  login() {
-    this.af.auth.login();
-  }
-
-  logout() {
-    this.af.auth.logout();
-  }
 }

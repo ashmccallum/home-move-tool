@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 
 import { MdCheckboxModule } from '@angular2-material/checkbox';
 import { MdButtonModule } from '@angular2-material/button';
@@ -25,7 +27,7 @@ export const firebaseConfig = {
 
 export const FirebaseAuthConfig = {
   provider: AuthProviders.Facebook,
-  method: AuthMethods.Redirect
+  method: AuthMethods.Popup
 }
 
 @NgModule({
@@ -37,6 +39,7 @@ export const FirebaseAuthConfig = {
   imports: [
     BrowserModule,
     CommonModule,
+    HttpModule,
     FormsModule,
     MdButtonModule,
     MdSidenavModule,
@@ -47,7 +50,6 @@ export const FirebaseAuthConfig = {
     AngularFireModule.initializeApp(firebaseConfig, FirebaseAuthConfig)
   ],
   providers: [],
-  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

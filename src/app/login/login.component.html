@@ -1,3 +1,9 @@
-<div> {{ (af.auth | async)?.uid }} </div>
-<button md-raised-button color="primary" (click)="login()">Login with Facebook</button>
-<button md-raised-button color="primary" (click)="logout()">Logout</button>
+<div>  
+    <span *ngIf="af.auth | async">
+        Logged in as {{ (af.auth | async).auth.displayName }}
+        <button md-raised-button color="primary" (click)="af.auth.logout()">Logout</button>
+    </span>
+    <span *ngIf="!(af.auth | async)">
+        <button md-raised-button color="primary" (click)="af.auth.login()">Login with Facebook</button>
+    </span>
+</div>
